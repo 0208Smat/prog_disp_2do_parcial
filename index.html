@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Asistencia</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="login-container" class="card">
+
+        <img src="logo.png" class="logo">
+
+        <h2>Control de Asistencia</h2>
+
+        <label>Usuario</label>
+        <input type="text" id="usuario">
+
+        <label>Contraseña</label>
+        <input type="password" id="password">
+
+        <button onclick="login()">Ingresar</button>
+
+    </div>
+
+    <div id="panel" class="hidden">
+
+        <header>
+
+            <h1>Sistema de Asistencia</h1>
+
+            <div id="reloj"></div>
+
+            <button onclick="logout()">Cerrar Sesión</button>
+
+        </header>
+
+        <section class="info">
+
+            <h2 id="bienvenida"></h2>
+
+            <p id="rol"></p>
+
+        </section>
+
+        <section class="acciones">
+
+            <button id="btnRegistrar" onclick="registrarAsistencia()">
+                Marcar Entrada
+            </button>
+
+            <button id="btnSalida" onclick="registrarSalida()">
+                Marcar Salida
+            </button>
+
+            <button id="btnExportar" onclick="exportarCSV()">
+                Exportar CSV
+            </button>
+
+        </section>
+
+        <section class="estadisticas">
+
+            <div class="box">
+                <h3>Total Registros</h3>
+                <span id="totalRegistros">0</span>
+            </div>
+
+            <div class="box">
+                <h3>Llegadas Tardías</h3>
+                <span id="totalTardias">0</span>
+            </div>
+
+        </section>
+
+        <section>
+
+            <h2>Informe de Asistencia</h2>
+
+            <label>Filtrar por fecha</label>
+            <input type="date" id="fechaFiltro">
+
+            <button id="btnFiltrar" onclick="filtrarFecha()">
+                Buscar
+            </button>
+
+            <button id="btnResetBusqueda" onclick="mostrarInforme()">
+                Reiniciar búsqueda
+            </button>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Empleado</th>
+                        <th>Rol</th>
+                        <th>Fecha</th>
+                        <th>Entrada</th>
+                        <th>Salida</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tablaAsistencia"></tbody>
+
+            </table>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

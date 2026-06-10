@@ -1,0 +1,3 @@
+Empleado,Rol,Fecha,Entrada,Salida,Estado
+cajero,Cajero,2026-06-11,7:24:00 AM,7:25:00 AM,Puntual
+cajero,Cajero,2026-06-10,8:25:07 PM,8:25:10 PM,Tardía
